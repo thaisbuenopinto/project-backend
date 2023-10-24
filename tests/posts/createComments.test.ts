@@ -5,9 +5,7 @@ import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
 import { TokenManagerMock } from "../mocks/TokenManagerMock";
 import { UserDatabaseMock } from "../mocks/UserDatabaseMock";
 import {
-  CreateCommentInputDTO,
-  CreateCommentOutputDTO,
-} from "../../src/dtos/coments/createComment.dto";
+  CreateCommentInputDTO, CreateCommentOutputDTO } from "../../src/endpoints/coments/createComment.dto";
 
 describe("Testes no createComment", () => {
   const postsBusiness = new PostsBusiness(
@@ -20,7 +18,7 @@ describe("Testes no createComment", () => {
   it("Deve criar um novo comentário", async () => {
     const input: CreateCommentInputDTO = {
       content: "Este é um novo comentário",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       postId: "id-mock-post-1",
       likes: 0,
       dislikes: 0,
@@ -50,7 +48,7 @@ describe("Testes no createComment", () => {
   it("Deve lançar um erro ao tentar comentar em um post inexistente", async () => {
     const input: CreateCommentInputDTO = {
       content: "Este é um novo comentário",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       postId: "post-inexistente",
       likes: 0,
       dislikes: 0,

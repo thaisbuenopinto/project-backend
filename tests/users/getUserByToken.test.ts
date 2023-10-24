@@ -1,5 +1,5 @@
 import { UserBusiness } from "../../src/business/UserBusiness";
-import { GetUserByTokenSchema } from "../../src/dtos/user/getUserByToken.dto";
+import { GetUserByTokenSchema } from "../../src/endpoints/user/getUserByToken.dto";
 import { BadRequestError } from "../../src/errors/BadRequestError";
 import { NotFoundError } from "../../src/errors/NotFoundError";
 import { USER_ROLES } from "../../src/models/User";
@@ -17,7 +17,7 @@ describe("Testando getUserByToken", () => {
   );
 
   it("Deve retornar os dados do usuário com base no token válido", async () => {
-    // Suponha que você tenha um token válido gerado pelo seu mock TokenManager
+   
     const validToken = "token-valido";
 
     const input = GetUserByTokenSchema.parse({
@@ -44,7 +44,7 @@ describe("Testando getUserByToken", () => {
   });
 
   it("Deve lançar um erro NotFoundError se o usuário não existir", async () => {
-    const validToken = "token-mock-fulano";
+    const validToken = "token-mock-fabio";
 
     const input = GetUserByTokenSchema.parse({
       token: validToken,

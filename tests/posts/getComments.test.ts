@@ -7,7 +7,7 @@ import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
 import {
   GetCommentsInputDTO,
   GetCommentsOutputDTO,
-} from "../../src/dtos/coments/getComments.dto";
+} from "../../src/endpoints/coments/getComments.dto";
 
 describe("Testes no getComments", () => {
   const postsBusiness = new PostsBusiness(
@@ -19,7 +19,7 @@ describe("Testes no getComments", () => {
 
   it("Deve retornar os comentários de um post existente", async () => {
     const input: GetCommentsInputDTO = {
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       postId: "id-mock-post-1",
     };
 
@@ -42,7 +42,7 @@ describe("Testes no getComments", () => {
 
   it("Deve lançar um erro ao tentar obter comentários de um post inexistente", async () => {
     const input: GetCommentsInputDTO = {
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       postId: "post-inexistente",
     };
 

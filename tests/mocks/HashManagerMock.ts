@@ -8,11 +8,11 @@ export class HashManagerMock {
     hash: string
   ): Promise<boolean> => {
     switch (plaintext) {
-      case "fulano123":
-        return hash === "hash-mock-fulano";
+      case "fabio789":
+        return hash === "hash-mock-fabio";
 
       case "astrodev99":
-        return hash === "hash-mock-astrodev";
+        return hash === "hash-mock-magic";
 
       default:
         return false;

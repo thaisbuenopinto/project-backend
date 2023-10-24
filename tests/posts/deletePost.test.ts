@@ -3,7 +3,7 @@ import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
 import { TokenManagerMock } from "../mocks/TokenManagerMock";
 import { PostsDatabaseMock } from "../mocks/PostsDatabaseMock";
 import { UserDatabaseMock } from "../mocks/UserDatabaseMock";
-import { DeletePostInputDTO } from "../../src/dtos/posts/deletePost.dto";
+import { DeletePostInputDTO } from "../../src/endpoints/posts/deletePost.dto";
 import { NotFoundError } from "../../src/errors/NotFoundError";
 import { BadRequestError } from "../../src/errors/BadRequestError";
 
@@ -29,7 +29,7 @@ describe("testes no deletePost", () => {
   it("Deve lançar um erro NotFoundError se o post não existir no deletePost", async () => {
     const input: DeletePostInputDTO = {
       id: "id-post-inexistente",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
     };
 
     await expect(async () => {
@@ -51,7 +51,7 @@ describe("testes no deletePost", () => {
   it("Deve testar se o usuário é o dono do post", async () => {
     const input: DeletePostInputDTO = {
       id: "id-mock-post-2",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
     };
 
     await expect(async () => {

@@ -4,28 +4,28 @@ import { TokenPayload } from "../../src/services/TokenManager";
 export class TokenManagerMock {
   public createToken = (payload: TokenPayload): string => {
     if (payload.id === "id-mock") {
-      // signup de nova conta
+     
       return "token-mock";
-    } else if (payload.id === "id-mock-fulano") {
-      // login de fulano (conta normal)
-      return "token-mock-fulano";
+    } else if (payload.id === "id-mock-fabio") {
+     
+      return "token-mock-fabio";
     } else {
-      // login de astrodev (conta admin)
-      return "token-mock-astrodev";
+ 
+      return "token-mock-magic";
     }
   };
 
   public getPayload = (token: string): TokenPayload | null => {
-    if (token === "token-mock-fulano") {
+    if (token === "token-mock-fabio") {
       return {
-        id: "id-mock-fulano",
+        id: "id-mock-fabio",
         name: "Fulano",
         role: USER_ROLES.NORMAL,
       };
     } else if (token === "token-mock-astrodev") {
       return {
-        id: "id-mock-astrodev",
-        name: "Astrodev",
+        id: "id-mock-magic",
+        name: "Magico",
         role: USER_ROLES.ADMIN,
       };
     } else {

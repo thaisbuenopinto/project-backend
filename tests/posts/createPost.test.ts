@@ -1,5 +1,5 @@
 import { PostsBusiness } from "../../src/business/PostsBusiness";
-import { CreatePostSchema } from "../../src/dtos/posts/createPost.dto";
+import { CreatePostSchema } from "../../src/endpoints/posts/createPost.dto";
 import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
 import { TokenManagerMock } from "../mocks/TokenManagerMock";
 import { PostsDatabaseMock } from "../mocks/PostsDatabaseMock";
@@ -16,7 +16,7 @@ describe("testes no createPost", () => {
 
   it("Deve criar um novo post", async () => {
     const input = CreatePostSchema.parse({
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       content: "Este é o post 1",
     });
 
@@ -47,7 +47,7 @@ describe("testes no createPost", () => {
       .mockReturnValue({ id: "id-existente" });
 
     const input = CreatePostSchema.parse({
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       content: "Este é o post 1",
     });
 
