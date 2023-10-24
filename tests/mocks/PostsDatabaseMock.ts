@@ -6,7 +6,7 @@ import { CommentDB } from "../../src/models/Comments";
 const postsMock: PostsDB[] = [
   {
     id: "id-mock-post-1",
-    creator_id: "id-mock-fulano",
+    creator_id: "id-mock-fabio",
     content: "Este é o post 1",
     likes: 5,
     dislikes: 2,
@@ -16,7 +16,7 @@ const postsMock: PostsDB[] = [
   },
   {
     id: "id-mock-post-2",
-    creator_id: "id-mock-astrodev",
+    creator_id: "id-mock-magic",
     content: "Este é o post 2",
     likes: 10,
     dislikes: 3,
@@ -28,17 +28,17 @@ const postsMock: PostsDB[] = [
 
 const likesDislikesMock: LikesDislikesDB[] = [
   {
-    user_id: "id-mock-fulano",
+    user_id: "id-mock-fabio",
     post_id: "id-mock-post-1",
     like: 1,
   },
   {
-    user_id: "id-mock-astrodev",
+    user_id: "id-mock-magic",
     post_id: "id-mock-post-1",
     like: 0,
   },
   {
-    user_id: "id-mock-fulano",
+    user_id: "id-mock-fabio",
     post_id: "id-mock-post-2",
     like: 1,
   },
@@ -48,7 +48,7 @@ const commentsMock: CommentDB[] = [
   {
     id: "comment-id-1",
     post_id: "id-mock-post-1",
-    creator_id: "id-mock-astrodev",
+    creator_id: "id-mock-magic",
     content: "Este é o comentário 1",
     likes: 10,
     dislikes: 3,
@@ -58,7 +58,7 @@ const commentsMock: CommentDB[] = [
   {
     id: "comment-id-2",
     post_id: "id-mock-post-1",
-    creator_id: "id-mock-fulano",
+    creator_id: "id-mock-fabio",
     content: "Este é o comentário 2",
     likes: 1,
     dislikes: 0,
@@ -68,7 +68,7 @@ const commentsMock: CommentDB[] = [
   {
     id: "comment-id-3",
     post_id: "id-mock-post-1",
-    creator_id: "id-mock-astrodev",
+    creator_id: "id-mock-magic",
     content: "Este é o comentário 3",
     likes: 100,
     dislikes: 30,

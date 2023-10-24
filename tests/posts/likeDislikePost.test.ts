@@ -5,7 +5,7 @@ import { PostsDatabaseMock } from "../mocks/PostsDatabaseMock";
 import { UserDatabaseMock } from "../mocks/UserDatabaseMock";
 import { BadRequestError } from "../../src/errors/BadRequestError";
 import { NotFoundError } from "../../src/errors/NotFoundError";
-import { LikeDislikesInputDTO } from "../../src/dtos/likesDislikes/updateLikeDislike.dto";
+import { LikeDislikesInputDTO } from "../../src/endpoints/likesDislikes/updateLikeDislike.dto";
 import { Posts } from "../../src/models/Posts";
 
 describe("testes no LikeDislike", () => {
@@ -19,7 +19,7 @@ describe("testes no LikeDislike", () => {
   it("Deve executar o LikeDislike", async () => {
     const input: LikeDislikesInputDTO = {
       id: "id-mock-post-1",
-      token: "token-mock-astrodev",
+      token: "token-mock-magic",
       like: true,
     };
 
@@ -31,7 +31,7 @@ describe("testes no LikeDislike", () => {
   it("Deve lançar um erro NotFoundError se o post não existir no LikeDislike", async () => {
     const input: LikeDislikesInputDTO = {
       id: "id-post-inexistente",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       like: true,
     };
 
@@ -55,7 +55,7 @@ describe("testes no LikeDislike", () => {
   it("Deve lançar um erro NotFoundError se o usuário for o dono do post", async () => {
     const input: LikeDislikesInputDTO = {
       id: "id-mock-post-1",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       like: true,
     };
 
@@ -70,7 +70,7 @@ describe("testes no LikeDislike", () => {
   });
 
   it("Deve criar um objeto Post corretamente", () => {
-    // Mock dos dados de entrada
+
     const postDB = {
       id: "id-123",
       creator_id: "user-123",
@@ -82,7 +82,7 @@ describe("testes no LikeDislike", () => {
       amount_comment: 0,
     };
 
-    // Criar um objeto Post
+  
     const post = new Posts(
       postDB.id,
       postDB.creator_id,
@@ -94,7 +94,7 @@ describe("testes no LikeDislike", () => {
       postDB.amount_comment
     );
 
-    // Verificar se o objeto foi criado corretamente
+    
     expect(post).toBeDefined();
     expect(post.getId()).toBe(postDB.id);
     expect(post.getCreatorId()).toBe(postDB.creator_id);
@@ -108,7 +108,7 @@ describe("testes no LikeDislike", () => {
   it("Deve dar like em um post", async () => {
     const input: LikeDislikesInputDTO = {
       id: "id-mock-post-1",
-      token: "token-mock-astrodev",
+      token: "token-mock-magic",
       like: true,
     };
 
@@ -121,7 +121,7 @@ describe("testes no LikeDislike", () => {
   it("Deve dar like ou dislike em um post baseado no valor de 'like'", async () => {
     const inputLike: LikeDislikesInputDTO = {
       id: "id-mock-post-1",
-      token: "token-mock-astrodev",
+      token: "token-mock-magic",
       like: true,
     };
 

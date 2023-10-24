@@ -1,5 +1,5 @@
 import { UserBusiness } from "../../src/business/UserBusiness";
-import { EditUserInputDTO } from "../../src/dtos/user/editUser.dto";
+import { EditUserInputDTO } from "../../src/endpoints/user/editUser.dto";
 import { BadRequestError } from "../../src/errors/BadRequestError";
 import { NotFoundError } from "../../src/errors/NotFoundError";
 import { HashManagerMock } from "../mocks/HashManagerMock";
@@ -17,11 +17,11 @@ describe("Testes no endpoint editUser", () => {
 
   it("Deve editar o usuário com sucesso", async () => {
     const input: EditUserInputDTO = {
-      token: "token-mock-fulano",
-      emailToEdit: "fulano@email.com",
-      name: "Fulano Editado",
+      token: "token-mock-fabio",
+      emailToEdit: "fabio@email.com",
+      name: "Fabio Editado",
       email: "novo-email@email.com",
-      password: "novasenha123",
+      password: "novasenha789",
     };
 
     const output = await userBusiness.editUser(input);
@@ -34,10 +34,10 @@ describe("Testes no endpoint editUser", () => {
   it("Deve lançar um erro BadRequestError se o token for inválido", async () => {
     const input: EditUserInputDTO = {
       token: "token-invalido",
-      emailToEdit: "fulano@email.com",
-      name: "Fulano Editado",
+      emailToEdit: "fabio@email.com",
+      name: "Fabio Editado",
       email: "novo-email@email.com",
-      password: "novasenha123",
+      password: "novasenha789",
     };
 
     await expect(async () => {
@@ -47,11 +47,11 @@ describe("Testes no endpoint editUser", () => {
 
   it("Deve lançar um erro NotFoundError se o usuário não existir", async () => {
     const input: EditUserInputDTO = {
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
       emailToEdit: "email-inexistente@email.com",
-      name: "Fulano Editado",
+      name: "Fabio Editado",
       email: "novo-email@email.com",
-      password: "novasenha123",
+      password: "novasenha789",
     };
 
     await expect(async () => {

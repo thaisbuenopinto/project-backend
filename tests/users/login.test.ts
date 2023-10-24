@@ -1,6 +1,6 @@
 import { ZodError } from "zod";
 import { UserBusiness } from "../../src/business/UserBusiness";
-import { LoginSchema } from "../../src/dtos/user/login.dto";
+import { LoginSchema } from "../../src/endpoints/user/login.dto";
 import { HashManagerMock } from "../mocks/HashManagerMock";
 import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
 import { TokenManagerMock } from "../mocks/TokenManagerMock";
@@ -17,14 +17,14 @@ describe("Testando login", () => {
 
   test("deve gerar um token ao logar", async () => {
     const input = LoginSchema.parse({
-      email: "fulano@email.com",
-      password: "fulano123",
+      email: "fabio@email.com",
+      password: "fabio789",
     });
 
     const output = await userBusiness.login(input);
 
     expect(output).toEqual({
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
     });
   });
 
@@ -33,8 +33,8 @@ describe("Testando login", () => {
 
     try {
       const input = LoginSchema.parse({
-        email: "fulano@email.com",
-        password: "fulano123",
+        email: "fabio@email.com",
+        password: "fabio789",
       });
 
       expect(typeof input.email).toBe("string");
@@ -46,7 +46,7 @@ describe("Testando login", () => {
   });
 
   it("Deve lançar um erro NotFoundError se o email não estiver cadastrado", async () => {
-    // Suponha que você tenha um email que não está cadastrado no seu mock
+    
     const nonExistentEmail = "email-nao-cadastrado@test.com";
 
     const input = LoginSchema.parse({
@@ -61,7 +61,7 @@ describe("Testando login", () => {
 
   it("Deve lançar um erro BadRequestError se o email ou senha forem inválidos", async () => {
     const input = LoginSchema.parse({
-      email: "fulano@email.com",
+      email: "fabio@email.com",
       password: "senha-invalida",
     });
 

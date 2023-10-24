@@ -1,5 +1,5 @@
 import { UserBusiness } from "../../src/business/UserBusiness";
-import { DeleteUserInputDTO } from "../../src/dtos/user/deleteUser.dto";
+import { DeleteUserInputDTO } from "../../src/endpoints/user/deleteUser.dto";
 import { BadRequestError } from "../../src/errors/BadRequestError";
 import { HashManagerMock } from "../mocks/HashManagerMock";
 import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
@@ -17,7 +17,7 @@ describe("Testes no endpoint deleteUser", () => {
   it("Deve deletar um usuário com sucesso", async () => {
     const input: DeleteUserInputDTO = {
       email: "email-existente@email.com",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
     };
 
     const output = await userBusiness.deleteUser(input);
@@ -28,7 +28,7 @@ describe("Testes no endpoint deleteUser", () => {
   it("Deve lançar um erro BadRequestError se o email não existir", async () => {
     const input: DeleteUserInputDTO = {
       email: "email-inexistente@email.com",
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
     };
 
     await expect(async () => {

@@ -4,17 +4,17 @@ import { BaseDatabase } from "../../src/database/BaseDatabase";
 const usersMock: UserDB[] = [
   {
     id: "id-mock-fulano",
-    name: "Fulano",
-    email: "fulano@email.com",
-    password: "hash-mock-fulano", // senha = "fulano123"
+    name: "Fabio",
+    email: "fabio@email.com",
+    password: "hash-mock-fabio", 
     created_at: new Date().toISOString(),
     role: USER_ROLES.NORMAL,
   },
   {
     id: "id-mock-astrodev",
-    name: "Astrodev",
-    email: "astrodev@email.com",
-    password: "hash-mock-astrodev", // senha = "astrodev99"
+    name: "Magico",
+    email: "magic@email.com",
+    password: "hash-mock-magic", 
     created_at: new Date().toISOString(),
     role: USER_ROLES.ADMIN,
   },

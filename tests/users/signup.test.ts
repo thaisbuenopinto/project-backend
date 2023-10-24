@@ -1,6 +1,6 @@
 import { ZodError } from "zod";
 import { UserBusiness } from "../../src/business/UserBusiness";
-import { SignupSchema } from "../../src/dtos/user/signup.dto";
+import { SignupSchema } from "../../src/endpoints/user/signup.dto";
 import { HashManagerMock } from "../mocks/HashManagerMock";
 import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
 import { TokenManagerMock } from "../mocks/TokenManagerMock";
@@ -17,9 +17,9 @@ describe("Testando signup", () => {
 
   test("deve gerar um token ao cadastrar", async () => {
     const input = SignupSchema.parse({
-      name: "Ciclana",
-      email: "ciclana@email.com",
-      password: "ciclana321",
+      name: "Catarina",
+      email: "catarina@email.com",
+      password: "catarina789",
     });
 
     const output = await userBusiness.signup(input);
@@ -35,9 +35,9 @@ describe("Testando signup", () => {
 
     try {
       const input = SignupSchema.parse({
-        name: "",
-        email: "ciclana@email.com",
-        password: "ciclana321",
+        name: "Catarina",
+        email: "catarina@email.com",
+        password: "catarina789",
       });
     } catch (error) {
       if (error instanceof ZodError) {
@@ -53,9 +53,9 @@ describe("Testando signup", () => {
 
     try {
       const input = SignupSchema.parse({
-        name: "Fulano",
-        email: "fulano@email.com",
-        password: "fulano123",
+        name: "Fabio",
+        email: "fabio@email.com",
+        password: "fabio789",
       });
 
       const output = await userBusiness.signup(input);

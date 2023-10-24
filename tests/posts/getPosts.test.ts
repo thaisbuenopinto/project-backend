@@ -1,5 +1,5 @@
 import { PostsBusiness } from "../../src/business/PostsBusiness";
-import { GetPostsInputDTO } from "../../src/dtos/posts/getPosts.dto";
+import { GetPostsInputDTO } from "../../src/endpoints/posts/getPosts.dto";
 import { IdGeneratorMock } from "../mocks/IdGeneratorMock";
 import { TokenManagerMock } from "../mocks/TokenManagerMock";
 import { PostsDatabaseMock } from "../mocks/PostsDatabaseMock";
@@ -16,7 +16,7 @@ describe("testes no getPosts", () => {
 
   it("Deve retornar a lista de posts", async () => {
     const input: GetPostsInputDTO = {
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
     };
 
     const output = await postsBusiness.getPosts(input);
@@ -37,7 +37,7 @@ describe("testes no getPosts", () => {
 
   it("Deve retornar os posts com os dados corretos", async () => {
     const input: GetPostsInputDTO = {
-      token: "token-mock-fulano",
+      token: "token-mock-fabio",
     };
 
     const output = await postsBusiness.getPosts(input);
