@@ -11,7 +11,7 @@ Html do projeto:
 
 Repostório Frontend:
 
-[Click here to see more](https://proj-backend-onny.onrender.com](https://github.com/thaisbuenopinto/project-frontend)
+[Click here to see more](https://github.com/thaisbuenopinto/project-frontend)
 
 ### Documentação
 
